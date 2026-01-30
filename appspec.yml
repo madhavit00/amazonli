@@ -7,6 +7,6 @@ files:
 
 hooks:
   AfterInstall:
-    - location: script/dep.sh
+    - location: dep.sh
       timeout: 300
       runas: root
