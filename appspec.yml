@@ -1,12 +1,24 @@
 version: 0.0
-os: linux
-
+os: Amazon linux
 files:
-  - source: github 
-    destination: /var/www/html/
+  - source: /index.html
+    destination: /var/www/html
 
+
+  - source: /register.html
+    destination: /var/www/html
+
+  - source: /style.css
+    destination: /var/www/html
+
+  - source: /script.js
+    destination: /var/www/html
+
+  - source: /dep.sh
+    destination: /var/www/html
 hooks:
-  AfterInstall:
-    - location: dep.sh
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
+
