@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+
+files:
+  - source: github 
+    destination: /var/www/html/
+
+hooks:
+  AfterInstall:
+    - location: script/dep.sh
+      timeout: 300
+      runas: root
